@@ -1,44 +1,31 @@
 # Resolución de la práctica Spark usando R #
 
 
- ![Design](https://github.com/sukuzhanay/tfginder/blob/main/tfginder_v1.drawio-2.png)
+ ![Design](https://github.com/sukuzhanay/practica_spark_ue21535220/blob/main/Spark.png)
 
  [![Run on Repl.it](https://repl.it/badge/github/sukuzhanay/chat_using_sockets)](https://repl.it/github/sukuzhanay/chat_using_sockets)
 
- ### Proyecto final de la asignatura de Programación Concurrente y Distribuida .  
- Prof.: **Christian Vladimir Sucuzhanay Arevalo** 
+ ### Práctica Spark del MÓDULO II: POSICIONAMIENTO EMPRESARIAL DEL BIG DATA 
+ Prof.: _**Christian Vladimir Sucuzhanay Arevalo**_ 
 
- Repositorio que alberga el proyecto de programación concurrente y distribuida, contará con las funcionalidades siguientes:
+ Repositorio que alberga la Práctica Spark del MÓDULO II: POSICIONAMIENTO EMPRESARIAL DEL BIG DATA 
 
-1. **Muestra** la lista de **Directores de UE**, su disponiilidad, skills y temas
-2. **Notifica** al **Director** de que lo ha **elegido** y recibiras su *Aceptacion o Negativa*  **DNI**
-3. **Dashboard** interactivo para actualizar tu perfil como el de los directores
+
 ### Autores
-1. **Christian Vladimir Sucuzhanay Arevalo** ( Profesor )
-2. **Jefe grupo 1
-3. **Jefe grupo 2 
-4. **Jefe grupo 3 
-5. **Jefe grupo 3
-### Estructura y tecnologías usadas en _**TFGINDER**_
+1. Christian Vladimir Sucuzhanay Arevalo** ( Profesor )
+2. Alumnos del MÓDULO II: POSICIONAMIENTO EMPRESARIAL DEL BIG DATA
 
-**FrontEnd**
-1. Streamlit
-2. Python
-3. JavaScript
-4. Github
-5. Figma
-6. React
+### Estructura y tecnologías usadas en _**Práctica Spark**_
 
-**Backend**
-1. Firebase
-2. Base de datos NoSql ( realtime database )
-3. Storage ( almacenamiento de Fotos, CV)
-4. Autentificacion (auth)
-5. Dashboard Plotly 
-6. Python
-7. Javascript
-8. Github
-9. Figma
+**LENGUAJES**
+1. Github
+2. Git
+3. GCP
+4. BIGQUERY
+5. R
+6. Rstudio
+7. Api del Ministerio de Industria
+8. SQL
 
 ![Logo of the project](https://github.com/sukuzhanay/tfginder/blob/main/UEM-logo.png)
 
