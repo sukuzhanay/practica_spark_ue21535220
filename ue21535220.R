@@ -43,7 +43,15 @@ ds_low_cost %>% count(horario, sort = TRUE)
 
 ds_low_cost %>% filter(horario == 'L-D: 24H') %>% select(!horario)
 
-readxl::read_excel('pobmun21.xlsx') %>% view()
+pob <- readxl::read_excel('pobmun21.xlsx', skip = 1)
+
+pob_def <- pob %>% select(NOMBRE,POB21) %>% clean_names() %>% rename(municipio=nombre)
+
+ds_w_pob <- inner_join(ds_low_cost,pob_def,by="municipio")
+
+
+
+
 
 
 
