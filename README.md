@@ -6,26 +6,27 @@
  [![Run on Repl.it](https://repl.it/badge/github/sukuzhanay/chat_using_sockets)](https://repl.it/github/sukuzhanay/chat_using_sockets)
 
  ### Práctica Spark del MÓDULO II: POSICIONAMIENTO EMPRESARIAL DEL BIG DATA 
- Prof.: _**Christian Vladimir Sucuzhanay Arevalo**_ 
+ [Prof.: _**Christian Vladimir Sucuzhanay Arevalo**_](https://www.linkedin.com/in/sucuzhanay)
 
  Repositorio que alberga la Práctica Spark del MÓDULO II: POSICIONAMIENTO EMPRESARIAL DEL BIG DATA 
 
 
 ### Autores
-1. Christian Vladimir Sucuzhanay Arevalo** ( Profesor )
+1. [Christian Vladimir Sucuzhanay Arevalo** ( Profesor )](https://www.linkedin.com/in/sucuzhanay)
 2. Alumnos del MÓDULO II: POSICIONAMIENTO EMPRESARIAL DEL BIG DATA
 
 ### Estructura y tecnologías usadas en _**Práctica Spark**_
 
-**LENGUAJES**
+** Origenes de datos, lenguajes y tecnologías**
 1. Github
 2. Git
 3. GCP
 4. BIGQUERY
 5. R
 6. Rstudio
-7. Api del Ministerio de Industria
-8. SQL
+7. [Api del Ministerio de Industria](https://geoportalgasolineras.es/geoportal-instalaciones/DescargarFicheros)
+8. [Instituto Nacional de Estadística](https://www.ine.es/pob_xls/pobmun.zip)
+9. SQL
 
 ![Logo of the project](https://github.com/sukuzhanay/tfginder/blob/main/UEM-logo.png)
 
