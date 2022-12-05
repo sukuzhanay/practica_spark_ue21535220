@@ -39,6 +39,14 @@ precio_promedio_ccaa <- ds_low_cost %>% select(precio_gasoleo_a,precio_gasolina_
             gasolina_91= mean(precio_gasolina_95_e5, na.rm = TRUE),gasolina_93= mean(precio_gasolina_95_e5, na.rm = TRUE))
 write_excel_csv(precio_promedio_ccaa,"promedios_por_ccaa.xls")
 
+ds_low_cost %>% count(horario, sort = TRUE)
+
+ds_low_cost %>% filter(horario == 'L-D: 24H') %>% select(!horario)
+
+readxl::read_excel('pobmun21.xlsx') %>% view()
+
+
+
 
 
 
