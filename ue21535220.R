@@ -7,7 +7,7 @@ url_='https://sedeaplicaciones.minetur.gob.es/ServiciosRESTCarburantes/PreciosCa
 ## Load libs
 install.packages("pacman")
 library(pacman)
-p_load(tidyverse, janitor, jsonlite)
+p_load(tidyverse, janitor, jsonlite, leaflet)
 data <- fromJSON(url_)
 ## crtl + shift + m   = pipe
 ## option / alt + -   = assign
@@ -41,13 +41,25 @@ write_excel_csv(precio_promedio_ccaa,"promedios_por_ccaa.xls")
 
 ds_low_cost %>% count(horario, sort = TRUE)
 
-ds_low_cost %>% filter(horario == 'L-D: 24H') %>% select(!horario)
+no_24h <- ds_low_cost %>% filter(horario == 'L-D: 24H') %>% select(!horario)
+
+
 
 pob <- readxl::read_excel('pobmun21.xlsx', skip = 1)
 
 pob_def <- pob %>% select(NOMBRE,POB21) %>% clean_names() %>% rename(municipio=nombre)
 
 ds_w_pob <- inner_join(ds_low_cost,pob_def,by="municipio")
+
+top_ten <-no_24h %>% select(latitud,longitud_wgs84,municipio, rotulo) %>% filter(municipio == 'Alcobendas')
+
+top_ten
+
+top_ten %>% leaflet() %>% addTiles() %>% addCircleMarkers(lng = ~longitud_wgs84,lat = ~latitud)
+
+
+
+
 
 
 
