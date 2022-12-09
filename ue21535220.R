@@ -29,12 +29,17 @@ precio_promedio_ccaa <- ds_low_cost %>% select(precio_gasoleo_a,precio_gasolina_
 write_excel_csv(precio_promedio_ccaa,"promedios_por_ccaa.xls")
 ds_low_cost %>% count(horario, sort = TRUE)
 no_24h <- ds_low_cost %>% filter(horario == 'L-D: 24H') %>% select(!horario)
+
+
+
 pob <- readxl::read_excel('pobmun21.xlsx', skip = 1)
 pob_def <- pob %>% select(NOMBRE,POB21) %>% clean_names() %>% rename(municipio=nombre)
 ds_w_pob <- inner_join(ds_low_cost,pob_def,by="municipio")
 top_ten <-no_24h %>% select(latitud,longitud_wgs84,municipio, rotulo) %>% filter(municipio == 'Alcobendas')
 top_ten
 top_ten %>% leaflet() %>% addTiles() %>% addCircleMarkers(lng = ~longitud_wgs84,lat = ~latitud)
+
+ds_w_pob %>% select(pob21,municipio) %>% filter(pob21>=15000) %>%count(pob21,municipio, sort = TRUE) %>%  view()
 
 
 
