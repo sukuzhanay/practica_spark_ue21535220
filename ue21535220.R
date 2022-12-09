@@ -6,7 +6,7 @@ url_='https://sedeaplicaciones.minetur.gob.es/ServiciosRESTCarburantes/PreciosCa
 ## Load libs
 install.packages("pacman")
 library(pacman)
-p_load(tidyverse, janitor, jsonlite, leaflet)
+p_load(tidyverse, janitor, jsonlite, leaflet, geosphere)
 data <- fromJSON(url_)
 ## crtl + shift + m   = pipe
 ## option / alt + -   = assign
@@ -32,6 +32,12 @@ no_24h <- ds_low_cost %>% filter(horario == 'L-D: 24H') %>% select(!horario)
 
 
 
+# PRediccion de estaciones que cerraran -----------------------------------
+
+pob2000 <- read_excel("pobmun/pobmun00.xls", skip = 1)
+pob2000
+
+
 pob <- readxl::read_excel('pobmun21.xlsx', skip = 1)
 pob_def <- pob %>% select(NOMBRE,POB21) %>% clean_names() %>% rename(municipio=nombre)
 ds_w_pob <- inner_join(ds_low_cost,pob_def,by="municipio")
@@ -41,6 +47,11 @@ top_ten %>% leaflet() %>% addTiles() %>% addCircleMarkers(lng = ~longitud_wgs84,
 
 ds_w_pob %>% select(pob21,municipio) %>% filter(pob21>=15000) %>%count(pob21,municipio, sort = TRUE) %>%  view()
 
+uni <- c(40.373942679873714, -3.919257897378161)
+
+
+
+                                            
 
 
 
