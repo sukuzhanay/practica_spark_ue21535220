@@ -6,7 +6,7 @@ url_='https://sedeaplicaciones.minetur.gob.es/ServiciosRESTCarburantes/PreciosCa
 ## Load libs
 install.packages("pacman")
 library(pacman)
-p_load(tidyverse, janitor, jsonlite, leaflet, geosphere)
+p_load(tidyverse, janitor, jsonlite, leaflet, geosphere, mapsapi,xml2)
 data <- fromJSON(url_)
 ## crtl + shift + m   = pipe
 ## option / alt + -   = assign
@@ -46,8 +46,18 @@ top_ten
 top_ten %>% leaflet() %>% addTiles() %>% addCircleMarkers(lng = ~longitud_wgs84,lat = ~latitud)
 
 ds_w_pob %>% select(pob21,municipio) %>% filter(pob21>=15000) %>%count(pob21,municipio, sort = TRUE) %>%  view()
+uem <- c(-3.919257897378161, 40.373942679873714)
 
-uni <- c(40.373942679873714, -3.919257897378161)
+gasos_villa <-ds_w_pob %>%  filter(municipio=="Villaviciosa de Odón")
+
+distancias_villa <- ds_w_pob %>% filter(municipio=="Villaviciosa de Odón") %>% 
+  select(longitud_wgs84,latitud) %>% distGeo(uni) %>% view()
+
+data_set_villa <-  gasos_villa %>%  
+  mutate(distancias = distancias_villa) %>% view()
+
+
+
 
 
 
