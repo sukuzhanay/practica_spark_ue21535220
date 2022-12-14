@@ -59,7 +59,8 @@ data_set_villa <-  gasos_villa %>%
 direccion <- "Calle de Goya, 88, 28009 Madrid"
 key= "AIzaSyBwZmpm5vyvU7lKhHH7iCpXkVq3cy_C8Jc"
 
-mp_geocode(direccion)
+res <- mp_geocode(direccion,key=key)
+coord <- mp_get_points(res)
 
 
 
