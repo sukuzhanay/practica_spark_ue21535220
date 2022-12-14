@@ -6,7 +6,7 @@ url_='https://sedeaplicaciones.minetur.gob.es/ServiciosRESTCarburantes/PreciosCa
 ## Load libs
 install.packages("pacman")
 library(pacman)
-p_load(tidyverse, janitor, jsonlite, leaflet, geosphere, mapsapi,xml2)
+p_load(tidyverse, janitor, jsonlite, leaflet, geosphere, mapsapi,xml2, mapsapi)
 data <- fromJSON(url_)
 ## crtl + shift + m   = pipe
 ## option / alt + -   = assign
@@ -54,7 +54,19 @@ distancias_villa <- ds_w_pob %>% filter(municipio=="Villaviciosa de Odón") %>%
   select(longitud_wgs84,latitud) %>% distGeo(uni) %>% view()
 
 data_set_villa <-  gasos_villa %>%  
-  mutate(distancias = distancias_villa) %>% view()
+  mutate(distancias = round(distancias_villa/1000, digits = 2)) %>% view()
+
+direccion <- "Calle de Goya, 88, 28009 Madrid"
+key= "AIzaSyBwZmpm5vyvU7lKhHH7iCpXkVq3cy_C8Jc"
+
+mp_geocode(direccion)
+
+
+
+
+
+
+
 
 
 
